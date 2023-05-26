@@ -1,6 +1,6 @@
 {
   "orgName": "cg-service - Dev Org",
-  "edition": "Developer",
+  "template": "0TTB0000001Y3dD",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
