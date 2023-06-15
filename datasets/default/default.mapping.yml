@@ -1,0 +1,34 @@
+# Editing this file is usually not recommended because it will
+# be overwritten the next time you re-capture this data.
+#
+# You can change this file's contents permanently by creating a
+# .load.yml file and re-capturing:
+#
+#  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert Knowledge__kav:
+  sf_object: Knowledge__kav
+  table: Knowledge__kav
+  fields:
+  - Answer__c
+  - Content__c
+  - DigitalEngagementResponse__c
+  - IsVisibleInCsp
+  - IsVisibleInPkb
+  - IsVisibleInPrm
+  - Language
+  - NextReviewDate
+  - Question__c
+  - Summary
+  - Title
+  - UrlName
+  - ValidationStatus
+Insert Knowledge__DataCategorySelection:
+  sf_object: Knowledge__DataCategorySelection
+  table: Knowledge__DataCategorySelection
+  fields:
+  - DataCategoryGroupName
+  - DataCategoryName
+  lookups:
+    ParentId:
+      table: Knowledge__kav
+      key_field: ParentId

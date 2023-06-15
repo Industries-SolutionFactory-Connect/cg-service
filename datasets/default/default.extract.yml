@@ -1,0 +1,19 @@
+extract:
+  Knowledge__DataCategorySelection:
+    fields:
+    - ParentId
+  Knowledge__kav:
+    fields:
+    - Answer__c
+    - Content__c
+    - DigitalEngagementResponse__c
+    - IsVisibleInCsp
+    - IsVisibleInPkb
+    - IsVisibleInPrm
+    - Language
+    - NextReviewDate
+    - Question__c
+    - Summary
+    - Title
+    - UrlName
+    - ValidationStatus
