@@ -26,3 +26,38 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+# enabling knowledge user checkbox for admin user
+    enable_knowledge_for_users:
+        description: Enable Knowledge flag for Users
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        options:
+            path: force-app/main/default/apex/KnowledgeUserPerm.apex
+        ui_options:
+            name: Enable Knowledge flag for Users
+flows:
+    cg_metadata_setup:
+        steps:
+            1:
+             task: org_settings
+             options:
+                definition_file: orgs/dev.json
+             ui_options:
+                name: Enable Knowledge User for Consumer Goods Cloud.
+            2:
+             task: enable_knowledge_for_users
+             options:
+                path: force-app/main/default/servicemetadata/apex/KnowledgeUserPerm.apex
+             ui_options:
+                name: Enable Knowledge flag for Users
+            3:
+             task: deploy
+             options:
+                path: force-app/main/default/servicemetadata
+             ui_options:
+                name: Deploy Metadata
+            4:
+             task: assign_permission_sets
+             options:
+                api_names: KnowledgeManagerPermission
+             ui_options:
+                name: Adding Permission Set to Admin User

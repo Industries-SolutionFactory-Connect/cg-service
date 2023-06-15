@@ -19,6 +19,10 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "KnowledgeSettings":{
+      "enableKnowledge": true,
+      "enableLightningKnowledge": true
     }
   }
 }
