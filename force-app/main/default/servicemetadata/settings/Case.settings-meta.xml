@@ -14,7 +14,7 @@
     <defaultCaseFeedLayoutOn>true</defaultCaseFeedLayoutOn>
     <defaultCaseOwner>Service_Case</defaultCaseOwner>
     <defaultCaseOwnerType>Queue</defaultCaseOwnerType>
-    <defaultCaseUser>test-kunwddu3bjcz@example.com</defaultCaseUser>
+    <defaultCaseUser>USERNAME</defaultCaseUser>
     <emailToCase>
         <enableE2CAttachmentAsFile>true</enableE2CAttachmentAsFile>
         <enableE2CSourceTracking>true</enableE2CSourceTracking>

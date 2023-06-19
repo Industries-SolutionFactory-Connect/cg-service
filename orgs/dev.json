@@ -22,7 +22,10 @@
     },
     "KnowledgeSettings":{
       "enableKnowledge": true,
-      "enableLightningKnowledge": true
+      "enableLightningKnowledge": true,
+      "showArticleSummariesCustomerPortal": true,
+      "showArticleSummariesInternalApp": true,
+      "showArticleSummariesPartnerPortal": true
     }
-  }
+}
 }
