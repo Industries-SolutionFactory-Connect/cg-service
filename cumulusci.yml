@@ -60,7 +60,8 @@ flows:
                         patterns:
                             - find: USERNAME
                               inject_username: True
-             ui_options: Deploy Metadata
+             ui_options: 
+                name: Deploy Metadata
             4:
              task: deploy
              options:
