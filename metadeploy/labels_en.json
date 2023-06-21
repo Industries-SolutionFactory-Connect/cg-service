@@ -9,7 +9,7 @@
             "description": "tagline of product"
         },
         "description": {
-            "message": "**About CG for Service**\r\nCG for Service delivers high-touch quality service and equips agents with integrated telesales capabilities powered by penny perfect pricing to cross sell and up sell products.\r\n\r\n**Base Plan** - Installs metadata configurations that help you get your org up and running. Recommended for all customers.\r\n\r\n**Post Install Steps**: Follow the [document](https://salesforce.quip.com/ZhfxAPToyyPO) to manually configure CTI call setup.\r\n\r\n**IMPORTANT**: Salesforce does not recommend installing directly in production organizations. Instead, install in one of your free sandbox environments, or a developer organization first.",
+            "message": "CG for Service delivers high-touch quality service and equips agents with integrated telesales capabilities powered by penny perfect pricing to cross sell and up sell products.\r\n\r\n**Base Plan** - Installs metadata configurations that help you get your org up and running. Recommended for all customers.\r\n\r\n**Post Install Steps**: <br>\r\n1.  Follow the [document](https://salesforce.quip.com/WVsYAkJlbc0D) to manually configure Alerts on the Service Page.<br>\r\n2.  Follow the [document](https://salesforce.quip.com/ZhfxAPToyyPO) to manually configure CTI call setup.\r\n\r\n**IMPORTANT**: Salesforce does not recommend installing directly in production organizations. Instead, install in one of your free sandbox environments, or a developer organization first.",
             "description": "shown on product detail page (markdown)"
         }
     },
@@ -92,6 +92,30 @@
         },
         "Publish knowledge article": {
             "message": "Publish knowledge article",
+            "description": "title of installation step"
+        },
+        "Enable Knowledge Settings for Consumer Goods Cloud.": {
+            "message": "Enable Knowledge Settings for Consumer Goods Cloud.",
+            "description": "title of installation step"
+        },
+        "Enable Knowledge User for Admin.": {
+            "message": "Enable Knowledge User for Admin.",
+            "description": "title of installation step"
+        },
+        "Deploy Metadata": {
+            "message": "Deploy Metadata",
+            "description": "title of installation step"
+        },
+        "Deploy Metadata for knowledge faq pagelayout and profile assignment": {
+            "message": "Deploy Metadata for knowledge faq pagelayout and profile assignment",
+            "description": "title of installation step"
+        },
+        "Assign Permission Set to Admin User": {
+            "message": "Assign Permission Set to Admin User",
+            "description": "title of installation step"
+        },
+        "Publish Knowledge Article": {
+            "message": "Publish Knowledge Article",
             "description": "title of installation step"
         }
     },
