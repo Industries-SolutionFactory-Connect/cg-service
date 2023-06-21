@@ -41,7 +41,7 @@ flows:
              options:
                 definition_file: orgs/dev.json
              ui_options:
-                name: Enable Knowledge User for Consumer Goods Cloud.
+                name: Enable Knowledge Settings for Consumer Goods Cloud.
             2:
              task: update_data
              options:
@@ -49,7 +49,7 @@ flows:
                 object: User
                 where: Profile.Name = 'System Administrator' AND IsActive = TRUE
              ui_options:
-                    name: "Enable Knowledge Article for Admin User" 
+                    name: Enable Knowledge User for Admin.
             3:
              task: deploy
              options:
@@ -60,21 +60,19 @@ flows:
                         patterns:
                             - find: USERNAME
                               inject_username: True
+             ui_options: Deploy Metadata
             4:
              task: deploy
              options:
                 path: force-app/main/default/sfdx_metadata
              ui_options:
                 name: Deploy Metadata for knowledge faq pagelayout and profile assignment
-
-             ui_options:
-                name: Deploy Metadata for all components
             5:
              task: assign_permission_sets
              options:
                 api_names: KnowledgeManagerPermission
              ui_options:
-                name: Adding Permission Set to Admin User
+                name: Assign Permission Set to Admin User
     cg_data_setup:
         steps:
             1:
@@ -89,7 +87,7 @@ flows:
              options:
                 path: force-app/main/default/servicemetadata/apex/KnowledgeArticlePublish.apex
              ui_options:
-                    name: Publish knowledge article
+                    name: Publish Knowledge Article
 plans:
   install:
     slug: install

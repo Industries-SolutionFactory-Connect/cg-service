@@ -1,0 +1,108 @@
+{
+    "product": {
+        "title": {
+            "message": "Consumer Goods for Service",
+            "description": "name of product"
+        },
+        "short_description": {
+            "message": "One stop shop for all service needs for CG customers.",
+            "description": "tagline of product"
+        },
+        "description": {
+            "message": "**About CG for Service**\r\nCG for Service delivers high-touch quality service and equips agents with integrated telesales capabilities powered by penny perfect pricing to cross sell and up sell products.\r\n\r\n**Base Plan** - Installs metadata configurations that help you get your org up and running. Recommended for all customers.\r\n\r\n**Post Install Steps**: Follow the [document](https://salesforce.quip.com/ZhfxAPToyyPO) to manually configure CTI call setup.\r\n\r\n**IMPORTANT**: Salesforce does not recommend installing directly in production organizations. Instead, install in one of your free sandbox environments, or a developer organization first.",
+            "description": "shown on product detail page (markdown)"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Base Plan",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "This will install metadata for CG for Sevice in your org",
+            "description": "shown before user starts installation (markdown)"
+        },
+        "post_install_message": {
+            "message": "Thanks for installing CG for Service Module.",
+            "description": "shown after successful installation (markdown)"
+        }
+    },
+    "checks": {
+        "You need PennyPerfectPricingPsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need PennyPerfectPricingPsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need ActionPlansPsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need ActionPlansPsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need IndustriesVisitPsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need IndustriesVisitPsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need LightningOrderManagementUserPsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need LightningOrderManagementUserPsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need CGCProcessingServicesRegisterPsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need CGCProcessingServicesRegisterPsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need OmniStudioDesigner psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need OmniStudioDesigner psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need IndustriesServiceExcellencePsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need IndustriesServiceExcellencePsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need ConsumerGoodsCloudServicePsl psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need ConsumerGoodsCloudServicePsl psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        },
+        "You need OmniStudioRuntime psl to use this solution. Contact your Account Executive to purchase licenses.": {
+            "message": "You need OmniStudioRuntime psl to use this solution. Contact your Account Executive to purchase licenses.",
+            "description": "shown if validation fails"
+        }
+    },
+    "steps": {
+        "Enable Knowledge User for Consumer Goods Cloud.": {
+            "message": "Enable Knowledge User for Consumer Goods Cloud.",
+            "description": "title of installation step"
+        },
+        "Enable Knowledge Article for Admin User": {
+            "message": "Enable Knowledge Article for Admin User",
+            "description": "title of installation step"
+        },
+        "deploy": {
+            "message": "deploy",
+            "description": "title of installation step"
+        },
+        "Deploy Metadata for all components": {
+            "message": "Deploy Metadata for all components",
+            "description": "title of installation step"
+        },
+        "Adding Permission Set to Admin User": {
+            "message": "Adding Permission Set to Admin User",
+            "description": "title of installation step"
+        },
+        "Load Business Data": {
+            "message": "Load Business Data",
+            "description": "title of installation step"
+        },
+        "Publish knowledge article": {
+            "message": "Publish knowledge article",
+            "description": "title of installation step"
+        }
+    },
+    "plan:data_flow": {
+        "title": {
+            "message": "Sample Data Plan",
+            "description": "title of installation plan"
+        },
+        "preflight_message": {
+            "message": "This will install data for CG for Service Module in your org",
+            "description": "shown before user starts installation (markdown)"
+        }
+    }
+}
