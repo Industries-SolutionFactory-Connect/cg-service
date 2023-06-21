@@ -231,10 +231,10 @@
     <layoutAssignments>
         <layout>Knowledge__kav-Knowledge Layout</layout>
     </layoutAssignments>
-    <layoutAssignments>
+    <!-- <layoutAssignments>
         <layout>Knowledge__kav-Lightning Knowledge FAQ Layout</layout>
         <recordType>Knowledge__kav.FAQ</recordType>
-    </layoutAssignments>
+    </layoutAssignments> -->
     <loginIpRanges>
         <description>Allow all</description>
         <endAddress>255.255.255.255</endAddress>
