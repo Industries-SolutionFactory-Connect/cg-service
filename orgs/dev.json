@@ -19,6 +19,13 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "KnowledgeSettings":{
+      "enableKnowledge": true,
+      "enableLightningKnowledge": true,
+      "showArticleSummariesCustomerPortal": true,
+      "showArticleSummariesInternalApp": true,
+      "showArticleSummariesPartnerPortal": true
     }
-  }
+}
 }

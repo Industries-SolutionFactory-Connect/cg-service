@@ -6,6 +6,7 @@ project:
         api_version: '58.0'
     git:
         default_branch: 'main'
+        repo_url: https://github.com/Industries-SolutionFactory-Connect/cg-service
         prefix_feature: 'feature/'
         prefix_beta: 'beta/'
         prefix_release: 'release/'
@@ -26,3 +27,113 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+# publishing knowledge article
+    publish_knowledge_article:
+        description: Publish Knowledge Articles
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        options:
+            path: force-app/main/default/apex/KnowledgeArticlePublish.apex
+flows:
+    cg_metadata_setup:
+        steps:
+            1:
+             task: org_settings
+             options:
+                definition_file: orgs/dev.json
+             ui_options:
+                name: Enable Knowledge User for Consumer Goods Cloud.
+            2:
+             task: update_data
+             options:
+                recipe: snowfakery/update_knowledgeuser.recipe.yml
+                object: User
+                where: Profile.Name = 'System Administrator' AND IsActive = TRUE
+             ui_options:
+                    name: "Enable Knowledge Article for Admin User" 
+            3:
+             task: deploy
+             options:
+                path: force-app/main/default/servicemetadata
+                transforms:
+                    - transform: find_replace
+                      options:
+                        patterns:
+                            - find: USERNAME
+                              inject_username: True
+            4:
+             task: deploy
+             options:
+                path: force-app/main/default/sfdx_metadata
+             ui_options:
+                name: Deploy Metadata for knowledge faq pagelayout and profile assignment
+
+             ui_options:
+                name: Deploy Metadata for all components
+            5:
+             task: assign_permission_sets
+             options:
+                api_names: KnowledgeManagerPermission
+             ui_options:
+                name: Adding Permission Set to Admin User
+    cg_data_setup:
+        steps:
+            1:
+             task: load_dataset
+             options:
+                mapping:  datasets/default/default.mapping.yml
+                sql_path: datasets/default/default.dataset.sql
+             ui_options:
+                name: Load Business Data
+            2:
+             task: publish_knowledge_article
+             options:
+                path: force-app/main/default/servicemetadata/apex/KnowledgeArticlePublish.apex
+             ui_options:
+                    name: Publish knowledge article
+plans:
+  install:
+    slug: install
+    title: Base Plan 
+    tier: primary
+    is_listed: True
+    preflight_message: "This will install metadata for CG for Sevice in your org"
+    post_install_message: "Thanks for installing CG for Service Module."
+    checks:
+      - when: "'PennyPerfectPricingPsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need PennyPerfectPricingPsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'ActionPlansPsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need ActionPlansPsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'IndustriesVisitPsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need IndustriesVisitPsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'LightningOrderManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need LightningOrderManagementUserPsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'CGCProcessingServicesRegisterPsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need CGCProcessingServicesRegisterPsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'OmniStudioDesigner' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need OmniStudioDesigner psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'IndustriesServiceExcellencePsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need IndustriesServiceExcellencePsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'ConsumerGoodsCloudServicePsl' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need ConsumerGoodsCloudServicePsl psl to use this solution. Contact your Account Executive to purchase licenses."
+      - when: "'OmniStudioRuntime' not in tasks.get_available_permission_set_licenses()"
+        action: error
+        message: "You need OmniStudioRuntime psl to use this solution. Contact your Account Executive to purchase licenses."
+    steps:
+      1:
+        flow: cg_metadata_setup
+  data_flow:
+    slug: data-flow
+    title: Sample Data Plan
+    tier: additional
+    preflight_message: "This will install data for CG for Service Module in your org"
+    steps:
+      1:
+        flow: cg_data_setup
