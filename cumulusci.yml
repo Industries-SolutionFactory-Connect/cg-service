@@ -98,9 +98,6 @@ plans:
     preflight_message: "This will install metadata for CG for Sevice in your org"
     post_install_message: "Thanks for installing CG for Service Module."
     checks:
-      - when: "'PennyPerfectPricingPsl' not in tasks.get_available_permission_set_licenses()"
-        action: error
-        message: "You need PennyPerfectPricingPsl psl to use this solution. Contact your Account Executive to purchase licenses."
       - when: "'ActionPlansPsl' not in tasks.get_available_permission_set_licenses()"
         action: error
         message: "You need ActionPlansPsl psl to use this solution. Contact your Account Executive to purchase licenses."
