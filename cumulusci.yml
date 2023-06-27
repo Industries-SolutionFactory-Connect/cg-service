@@ -107,12 +107,6 @@ plans:
       - when: "'IndustriesVisitPsl' not in tasks.get_available_permission_set_licenses()"
         action: error
         message: "You need IndustriesVisitPsl psl to use this solution. Contact your Account Executive to purchase licenses."
-      - when: "'LightningOrderManagementUserPsl' not in tasks.get_available_permission_set_licenses()"
-        action: error
-        message: "You need LightningOrderManagementUserPsl psl to use this solution. Contact your Account Executive to purchase licenses."
-      - when: "'CGCProcessingServicesRegisterPsl' not in tasks.get_available_permission_set_licenses()"
-        action: error
-        message: "You need CGCProcessingServicesRegisterPsl psl to use this solution. Contact your Account Executive to purchase licenses."
       - when: "'OmniStudioDesigner' not in tasks.get_available_permission_set_licenses()"
         action: error
         message: "You need OmniStudioDesigner psl to use this solution. Contact your Account Executive to purchase licenses."
